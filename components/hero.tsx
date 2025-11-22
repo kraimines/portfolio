@@ -187,7 +187,7 @@ export default function Hero() {
               className="absolute inset-0"
             >
               <Image
-                src="/portfolio/aa.png"
+                src="/aa.png"
                 alt="Profile Picture"
                 fill
                 className="object-cover"
