@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "set NODE_ENV=production && next build && xcopy /E /I /Y out docs && type nul > docs/.nojekyll",
+    "build:next": "next build",
+    "build": "powershell -ExecutionPolicy Bypass -File .\\build-for-github.ps1",
     "start": "next start",
     "lint": "next lint",
     "clean": "if exist .next rmdir /s /q .next && if exist out rmdir /s /q out && if exist docs rmdir /s /q docs",
