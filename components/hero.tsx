@@ -141,7 +141,7 @@ export default function Hero() {
             <motion.a
               whileHover={{ y: -3, scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              href="https://linkedin.com/in/yourprofile"
+              href="https://www.linkedin.com/in/ines-kraim-514036281/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full border border-accent/20 hover:border-accent/50 hover:bg-accent/5 transition-all duration-300"
@@ -187,7 +187,7 @@ export default function Hero() {
               className="absolute inset-0"
             >
               <Image
-                src="/aa.png"
+                src="/portfolio/aa.png"
                 alt="Profile Picture"
                 fill
                 className="object-cover"

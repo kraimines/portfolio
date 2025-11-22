@@ -236,7 +236,7 @@ export default function Contact() {
                   ineskraim22@gmail.com
                 </motion.a>
                 <motion.a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://www.linkedin.com/in/ines-kraim-514036281/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-gray-400 hover:text-cyan-400 transition-colors p-2 rounded-lg hover:bg-slate-800/30"
@@ -252,7 +252,7 @@ export default function Contact() {
                   ines-kraim
                 </motion.a>
                 <motion.a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/kraimines"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-gray-400 hover:text-cyan-400 transition-colors p-2 rounded-lg hover:bg-slate-800/30"
