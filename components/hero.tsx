@@ -151,7 +151,7 @@ export default function Hero() {
             <motion.a
               whileHover={{ y: -3, scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              href="mailto:your.email@example.com"
+              href="mailto:ineskraim22@gmail.com"
               className="p-2 rounded-full border border-accent/20 hover:border-accent/50 hover:bg-accent/5 transition-all duration-300"
             >
               <Mail className="w-5 h-5" />
@@ -187,7 +187,7 @@ export default function Hero() {
               className="absolute inset-0"
             >
               <Image
-                src="/aa.png"
+                src={`${process.env.NODE_ENV === 'production' ? '/portfolio' : ''}/aa.png`}
                 alt="Profile Picture"
                 fill
                 className="object-cover"

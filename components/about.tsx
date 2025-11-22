@@ -90,18 +90,7 @@ export default function About() {
                 <p className="font-semibold text-foreground">Ariana, Tunis</p>
               </motion.div>
               
-              <motion.div 
-                className="p-4 rounded-lg bg-gradient-to-r from-slate-900/50 to-slate-800/20 backdrop-blur-sm border border-slate-800/50 hover:border-cyan-500/30 transition-all duration-300"
-                whileHover={{ 
-                  y: -5,
-                  boxShadow: '0 10px 25px -5px rgb(6, 182, 212, 0.1)'
-                }}
-                variants={fadeIn('up', 0.7)}
-              >
-                <p className="text-sm text-muted-foreground mb-1">Languages</p>
-                <p className="font-semibold text-foreground">English • French (DELF B2) • Arabic (Native)</p>
-              </motion.div>
-              
+        
               <motion.div 
                 className="p-4 rounded-lg bg-gradient-to-r from-slate-900/50 to-slate-800/20 backdrop-blur-sm border border-slate-800/50 hover:border-cyan-500/30 transition-all duration-300"
                 whileHover={{ 
