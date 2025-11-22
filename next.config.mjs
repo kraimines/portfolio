@@ -7,7 +7,7 @@ const nextConfig = {
   basePath: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
   
   // Asset prefix for GitHub Pages
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/portfolio/' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
   
   // Disable image optimization for static export
   images: {
