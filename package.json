@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "set NODE_ENV=production && next build && xcopy /E /I /Y out docs && type nul > docs/.nojekyll",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build && next export -o docs",
-    "deploy": "npm run export && touch docs/.nojekyll && git add docs && git commit -m 'Update GitHub Pages' && git push"
+    "clean": "if exist .next rmdir /s /q .next && if exist out rmdir /s /q out && if exist docs rmdir /s /q docs",
+    "deploy": "powershell -ExecutionPolicy Bypass -File .\\deploy.ps1"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
