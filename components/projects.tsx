@@ -7,7 +7,7 @@ import { fadeIn, staggerContainer } from '@/lib/animations';
 export default function Projects() {
   const projects = [
     {
-      title: "Medical Image Analysis Platform",
+      title: "Medical Image Analysis",
       subtitle: "1st Place, Bootcamp Competition",
       description: "Deep learning model for early melanoma detection on the ISIC 2024 dataset.",
       highlights: [
@@ -51,6 +51,22 @@ export default function Projects() {
       tech: ["Python", "PyTorch", "Transformers", "Streamlit", "TensorFlow"],
       links: {
         github: "#",
+        demo: "#",
+      },
+    },
+    {
+      title: "Mental Health Analysis of University Students",
+      subtitle: "Statistical Analysis with R",
+      description: "Comprehensive study analyzing stress, anxiety, and depression factors among university students.",
+      highlights: [
+        "Principal Component Analysis (PCA) for dimensionality reduction",
+        "Correlation analysis and visualization",
+        "Descriptive statistics and demographic analysis",
+        "Interactive visualizations with R",
+      ],
+      tech: ["R", "FactoMineR", "ggplot2", "dplyr", "corrplot"],
+      links: {
+        github: "https://github.com/kraimines/Mental-Health-Analysis",
         demo: "#",
       },
     },
