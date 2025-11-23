@@ -112,7 +112,7 @@ export default function About() {
                 variants={fadeIn('up', 1.1)}
               >
                 <p className="text-sm text-muted-foreground mb-1">Phone</p>
-                <p className="font-semibold text-foreground">+216 50 035 014</p>
+                <p className="font-semibold text-foreground">+216 92 930 425</p>
               </motion.div>
             </motion.div>
           </motion.div>
