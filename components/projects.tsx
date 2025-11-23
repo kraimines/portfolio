@@ -18,7 +18,7 @@ export default function Projects() {
       ],
       tech: ["Python", "TensorFlow", "KerasCV", "OpenCV", "scikit-learn"],
       links: {
-        github: "#",
+        github: "https://github.com/kraimines/Medical-Image-Analysis",
         demo: "#",
       },
     },
@@ -34,7 +34,7 @@ export default function Projects() {
       ],
       tech: ["Python", "scikit-learn", "pandas", "SMOTE"],
       links: {
-        github: "#",
+        github: "https://github.com/kraimines/Credit-Default-Probability-Modeling-",
         demo: "#",
       },
     },
@@ -50,7 +50,7 @@ export default function Projects() {
       ],
       tech: ["Python", "PyTorch", "Transformers", "Streamlit", "TensorFlow"],
       links: {
-        github: "#",
+        github: "https://github.com/kraimines/NLP-Project-Multilingual-Sentiment-Analysis",
         demo: "#",
       },
     },
