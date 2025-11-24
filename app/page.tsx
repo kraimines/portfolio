@@ -7,44 +7,24 @@ import Projects from "@/components/projects"
 import Skills from "@/components/skills"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
-import ParallaxBackground from "@/components/parallax-background"
-import ScrollIndicator from "@/components/scroll-indicator"
-import FloatingElements from "@/components/floating-elements"
-import StorySection from "@/components/story-section"
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-black overflow-hidden">
-      <ParallaxBackground />
-      <FloatingElements />
-      <ScrollIndicator />
-
-      <Header />
-      
-      <div id="hero">
-        <Hero />
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-slate-950 to-black" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-20 blur-3xl">
+          <div className="absolute w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" />
+        </div>
       </div>
 
-      <StorySection id="about" chapter="Chapter 01" title="The Beginning" direction="right">
-        <About />
-      </StorySection>
-
-      <StorySection id="experience" chapter="Chapter 02" title="The Journey" direction="left" delay={0.2}>
-        <Experience />
-      </StorySection>
-
-      <StorySection id="projects" chapter="Chapter 03" title="The Creations" direction="up" delay={0.3}>
-        <Projects />
-      </StorySection>
-
-      <StorySection id="skills" chapter="Chapter 04" title="The Arsenal" direction="right" delay={0.2}>
-        <Skills />
-      </StorySection>
-
-      <StorySection id="contact" chapter="Chapter 05" title="The Connection" direction="down" delay={0.2}>
-        <Contact />
-      </StorySection>
-
+      <Header />
+      <Hero />
+      <About />
+      <Experience />
+      <Projects />
+      <Skills />
+      <Contact />
       <Footer />
     </main>
   )
