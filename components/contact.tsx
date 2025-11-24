@@ -81,6 +81,22 @@ export default function Contact() {
       />
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.div 
+          variants={fadeIn('up', 0)}
+          className="mb-12"
+        >
+          <h2 className="text-4xl font-bold text-cyan-400 glow-accent">Let's Connect</h2>
+          <motion.p 
+            className="text-lg text-gray-400 mt-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            I'm always interested in hearing about new projects and opportunities. Feel free to reach out!
+          </motion.p>
+        </motion.div>
+
+        <motion.div 
           className="grid md:grid-cols-2 gap-12"
           variants={staggerContainer}
         >

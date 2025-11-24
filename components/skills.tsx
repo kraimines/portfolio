@@ -62,6 +62,13 @@ export default function Skills() {
       />
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.div 
+          variants={fadeIn('up', 0)}
+          className="mb-12"
+        >
+          <h2 className="text-4xl font-bold text-cyan-400 glow-accent">Skills & Expertise</h2>
+        </motion.div>
+
+        <motion.div 
           className="grid md:grid-cols-1 gap-8"
           variants={staggerContainer}
         >

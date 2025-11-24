@@ -30,6 +30,14 @@ export default function About() {
           className="space-y-8"
           variants={staggerContainer}
         >
+          {/* Section Title */}
+          <motion.div 
+            variants={fadeIn('up', 0)}
+            className="mb-8"
+          >
+            <h2 className="text-4xl font-bold text-cyan-400 glow-accent">About Me</h2>
+          </motion.div>
+
           {/* Content */}
           <motion.div 
             className="grid md:grid-cols-2 gap-12"

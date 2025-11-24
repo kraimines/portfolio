@@ -54,6 +54,13 @@ export default function Experience() {
       />
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.div 
+          variants={fadeIn('up', 0)}
+          className="mb-12"
+        >
+          <h2 className="text-4xl font-bold text-cyan-400 glow-accent">Professional Experience</h2>
+        </motion.div>
+
+        <motion.div 
           className="space-y-8"
           variants={staggerContainer}
         >
