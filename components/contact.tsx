@@ -81,33 +81,6 @@ export default function Contact() {
       />
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.div 
-          className="mb-12 text-center"
-          variants={fadeIn('up', 0)}
-        >
-          <h2 className="text-4xl font-bold mb-4 glow-accent">
-            <span className="relative inline-block">
-              Let's Connect
-              <motion.span 
-                className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-500 to-blue-600"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
-                viewport={{ once: true }}
-              />
-            </span>
-          </h2>
-          <motion.p 
-            className="text-lg text-gray-400 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            I'm always interested in hearing about new projects and opportunities. Feel free to reach out!
-          </motion.p>
-        </motion.div>
-
-        <motion.div 
           className="grid md:grid-cols-2 gap-12"
           variants={staggerContainer}
         >

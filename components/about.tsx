@@ -30,25 +30,6 @@ export default function About() {
           className="space-y-8"
           variants={staggerContainer}
         >
-          {/* Section Title */}
-          <motion.div 
-            variants={fadeIn('up', 0)}
-            className="relative group"
-          >
-            <h2 className="text-4xl font-bold mb-4 glow-accent">
-              <span className="relative inline-block">
-                About Me
-                <motion.span 
-                  className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-500 to-blue-600"
-                  initial={{ scaleX: 0 }}
-                  whileInView={{ scaleX: 1 }}
-                  transition={{ duration: 0.8, ease: "easeInOut" }}
-                  viewport={{ once: true }}
-                />
-              </span>
-            </h2>
-          </motion.div>
-
           {/* Content */}
           <motion.div 
             className="grid md:grid-cols-2 gap-12"
