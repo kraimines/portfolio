@@ -1,4 +1,6 @@
+"use client"
 import { Github, Linkedin, Mail } from "lucide-react"
+import ViewCounter from "@/components/view-counter"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -70,7 +72,10 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-border pt-8">
-          <p className="text-center text-muted-foreground text-sm">© {currentYear} Ines Kraim. All rights reserved.</p>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-center text-muted-foreground text-sm">© {currentYear} Ines Kraim. All rights reserved.</p>
+            <ViewCounter />
+          </div>
         </div>
       </div>
     </footer>

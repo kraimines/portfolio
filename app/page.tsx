@@ -7,7 +7,6 @@ import Projects from "@/components/projects"
 import Skills from "@/components/skills"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
-import ViewCounter from "@/components/view-counter"
 
 export default function Home() {
   return (
@@ -27,7 +26,6 @@ export default function Home() {
       <Skills />
       <Contact />
       <Footer />
-      <ViewCounter />
     </main>
   )
 }
