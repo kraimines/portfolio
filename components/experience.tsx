@@ -16,7 +16,7 @@ export default function Experience() {
       type: "Internship",
       title: "OCR & LLM-Based Receipt Analysis",
       description: "Developed a Django web app automating receipt extraction and accounting workflows.",
-      videoUrl: "/videos/zaitouna-demo.mp4", // Add your video file to public/videos/
+      videoUrl: "", // Add your video file path or YouTube embed URL here
       videoType: "video/mp4",
       highlights: [
         "Multi-OCR pipeline (Doctr, Tesseract, Docling) for accurate text recognition",
@@ -47,7 +47,7 @@ export default function Experience() {
       type: "Internship",
       title: "R Shiny Choropleth App with PCA-Based Regional Analysis",
       description: "Performed data analysis and built interactive visualization application.",
-      videoUrl: "/videos/cns-demo.mp4", // Add your video file to public/videos/
+      videoUrl: "", // Add your video file path or YouTube embed URL here
       videoType: "video/mp4",
       highlights: [
         "Data cleaning on demographic and socioeconomic datasets",
