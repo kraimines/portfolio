@@ -16,6 +16,8 @@ export default function Experience() {
       type: "Internship",
       title: "OCR & LLM-Based Receipt Analysis",
       description: "Developed a Django web app automating receipt extraction and accounting workflows.",
+      videoUrl: "/videos/zaitouna-demo.mp4", // Add your video file to public/videos/
+      videoType: "video/mp4",
       highlights: [
         "Multi-OCR pipeline (Doctr, Tesseract, Docling) for accurate text recognition",
         "LLM integration (Gemini, Qwen, Ollama) to structure and correct OCR outputs",
@@ -45,6 +47,8 @@ export default function Experience() {
       type: "Internship",
       title: "R Shiny Choropleth App with PCA-Based Regional Analysis",
       description: "Performed data analysis and built interactive visualization application.",
+      videoUrl: "/videos/cns-demo.mp4", // Add your video file to public/videos/
+      videoType: "video/mp4",
       highlights: [
         "Data cleaning on demographic and socioeconomic datasets",
         "Applied PCA to reduce 61 variables to 14 key components",
@@ -220,6 +224,26 @@ export default function Experience() {
 
                 {/* Content */}
                 <div className="p-8 space-y-8">
+                  {/* Video Demo */}
+                  {experiences[selectedExp].videoUrl && (
+                    <div>
+                      <h3 className="text-xl font-bold text-cyan-400 mb-3">Project Demo</h3>
+                      <div className="relative rounded-xl overflow-hidden border border-cyan-500/30 bg-slate-950">
+                        <video 
+                          controls 
+                          className="w-full h-auto"
+                          preload="metadata"
+                        >
+                          <source 
+                            src={`${process.env.NODE_ENV === 'production' ? '/portfolio' : ''}${experiences[selectedExp].videoUrl}`}
+                            type={experiences[selectedExp].videoType || "video/mp4"} 
+                          />
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+                    </div>
+                  )}
+
                   {/* Description */}
                   <div>
                     <h3 className="text-xl font-bold text-cyan-400 mb-3">Overview</h3>
