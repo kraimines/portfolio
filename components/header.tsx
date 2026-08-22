@@ -1,94 +1,111 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
+import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 
 export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
 
-  const navItems = [
-    { label: "About", href: "#about" },
-    { label: "Experience", href: "#experience" },
-    { label: "Projects", href: "#projects" },
-    { label: "Skills", href: "#skills" },
-    { label: "Contact", href: "#contact" },
-  ]
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
-    <header className="sticky top-0 z-50 bg-black/40 backdrop-blur-xl border-b border-cyan-500/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link href="/" className="flex items-center gap-2 group">
-            <div
-              className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center hover:shadow-lg hover:shadow-cyan-500/50"
-              style={{ transition: "all 300ms ease-out" }}
-            >
-              <span className="text-black font-bold text-sm">IK</span>
-            </div>
-            <span
-              className="hidden sm:inline font-semibold text-white group-hover:text-cyan-400"
-              style={{ transition: "all 300ms ease-out" }}
-            >
-              Ines Kraim
-            </span>
-          </Link>
+    <header
+      className={`sticky top-0 z-40 w-full transition-all duration-300 ${
+        isScrolled ? "bg-white/95 backdrop-blur-sm border-b border-gray-100" : "bg-transparent border-b border-transparent"
+      }`}
+    >
+      <nav className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+        {/* Logo / Name */}
+        <Link href="#" className="font-serif text-lg font-semibold text-gray-900">
+          Ines Kraim
+        </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-gray-400 hover:text-cyan-400 text-sm font-medium relative group"
-                style={{ transition: "all 300ms ease-out" }}
-              >
-                {item.label}
-                <span
-                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full"
-                  style={{ transition: "all 300ms ease-out" }}
-                />
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-12">
+          <ul className="flex gap-10 text-sm text-gray-700">
+            <li>
+              <a href="#about" className="transition-colors hover:text-gray-900">
+                About
               </a>
-            ))}
-          </nav>
+            </li>
+            <li>
+              <a href="#experience" className="transition-colors hover:text-gray-900">
+                Experience
+              </a>
+            </li>
+            <li>
+              <a href="#projects" className="transition-colors hover:text-gray-900">
+                Projects
+              </a>
+            </li>
+            <li>
+              <a href="#skills" className="transition-colors hover:text-gray-900">
+                Skills
+              </a>
+            </li>
+            <li>
+              <a href="#leadership" className="transition-colors hover:text-gray-900">
+                Leadership
+              </a>
+            </li>
+          </ul>
 
-          <div className="hidden md:block">
-            <a
-              href="#contact"
-              className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-black rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 text-sm font-medium hover:scale-105"
-              style={{ transition: "all 300ms ease-out" }}
-            >
-              Get In Touch
-            </a>
-          </div>
-
-          <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Contact Button */}
+          <a
+            href="#contact"
+            className="text-sm px-5 py-2 border border-gray-900 text-gray-900 transition-all hover:bg-gray-900 hover:text-white"
+          >
+            Contact
+          </a>
         </div>
 
-        {isOpen && (
-          <nav className="md:hidden pb-4 space-y-2">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="block px-4 py-2 text-gray-400 hover:text-white hover:bg-cyan-500/10 rounded text-sm"
-                onClick={() => setIsOpen(false)}
-                style={{ transition: "all 300ms ease-out" }}
-              >
-                {item.label}
-              </a>
-            ))}
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-gray-900 p-2"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+        >
+          {isOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </nav>
+
+      {/* Mobile Navigation */}
+      {isOpen && (
+        <div className="md:hidden border-t border-gray-100 bg-white/95 backdrop-blur-sm">
+          <nav className="max-w-6xl mx-auto px-6 py-4 space-y-4">
+            <a href="#about" className="block text-sm text-gray-700 hover:text-gray-900" onClick={() => setIsOpen(false)}>
+              About
+            </a>
+            <a href="#experience" className="block text-sm text-gray-700 hover:text-gray-900" onClick={() => setIsOpen(false)}>
+              Experience
+            </a>
+            <a href="#projects" className="block text-sm text-gray-700 hover:text-gray-900" onClick={() => setIsOpen(false)}>
+              Projects
+            </a>
+            <a href="#skills" className="block text-sm text-gray-700 hover:text-gray-900" onClick={() => setIsOpen(false)}>
+              Skills
+            </a>
+            <a href="#leadership" className="block text-sm text-gray-700 hover:text-gray-900" onClick={() => setIsOpen(false)}>
+              Leadership
+            </a>
             <a
               href="#contact"
-              className="block px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-black rounded text-sm font-medium"
+              className="block text-sm px-5 py-2 border border-gray-900 text-gray-900 transition-all hover:bg-gray-900 hover:text-white text-center"
               onClick={() => setIsOpen(false)}
             >
-              Get In Touch
+              Contact
             </a>
           </nav>
-        )}
-      </div>
+        </div>
+      )}
     </header>
   )
 }

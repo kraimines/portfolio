@@ -2,203 +2,104 @@
 
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from "lucide-react"
-import { fadeIn, staggerContainer } from '@/lib/animations';
 
 export default function Projects() {
   const projects = [
     {
       title: "Medical Image Analysis",
-      subtitle: "1st Place, Bootcamp Competition",
-      description: "Deep learning model for early melanoma detection on the ISIC 2024 dataset.",
-      highlights: [
-        "Dual-input architecture: EfficientNetV2 + Dense networks",
-        "Data balancing and stratified splitting",
-        "0.85 validation AUC achieved",
-        "Patient metadata integration for improved accuracy",
-      ],
-      tech: ["Python", "TensorFlow", "KerasCV", "OpenCV", "scikit-learn"],
-      links: {
-        github: "https://github.com/kraimines/Medical-Image-Analysis",
-        demo: "#",
-      },
+      description: "Binary classification model for early melanoma detection using dual-input deep learning (EfficientNetV2 + patient metadata). 1st Place in Bootcamp Competition.",
+      tech: ["TensorFlow", "Python", "Deep Learning", "Medical Imaging"],
+      links: { github: "https://github.com/kraimines/Medical-Image-Classification-EfficientNetV2" }
     },
     {
-      title: "Credit Default Probability Modeling",
-      subtitle: "Machine Learning Classification",
-      description: "ML model to predict credit default using financial and non-financial indicators.",
-      highlights: [
-        "Advanced data preprocessing with winsorization",
-        "NearMiss balancing for 3.5% default rate",
-        "Feature engineering with IV, ANOVA, Chi-Square analysis",
-        "96% accuracy with Random Forest (AUC: 0.63)",
-      ],
-      tech: ["Python", "scikit-learn", "pandas", "SMOTE"],
-      links: {
-        github: "https://github.com/kraimines/Credit-Default-Probability-Modeling-",
-        demo: "#",
-      },
+      title: "Automated Trading with Reinforcement Learning",
+      description: "RL agent (PPO policy gradient) trained on 5+ years of historical stock data. Achieved +18.73% annual return over buy-and-hold strategy with optimized risk management.",
+      tech: ["Stable-Baselines3", "Python", "Finance", "RL"],
+      links: { github: "https://github.com/kraimines/Automated-Trading-Reinforce-Learning" }
     },
     {
-      title: "Multilingual Sentiment Analysis",
-      subtitle: "NLP with Transformers",
-      description: "NLP pipeline for emotion classification with multiple algorithms.",
-      highlights: [
-        "Compared Logistic Regression, SVM, Random Forest, LSTM, DistilBERT",
-        "DistilBERT achieved 71% accuracy",
-        "Text preprocessing and feature extraction",
-        "Streamlit dashboard for real-time emotion detection",
-      ],
-      tech: ["Python", "PyTorch", "Transformers", "Streamlit", "TensorFlow"],
-      links: {
-        github: "https://github.com/kraimines/NLP-Project-Multilingual-Sentiment-Analysis",
-        demo: "#",
-      },
+      title: "Enterprise AI Assistant",
+      description: "Multi-agent system orchestrating HR, CRM, and ERP systems with role-aware access control, LangGraph orchestration, and RAG-powered retrieval for knowledge bases.",
+      tech: ["LangGraph", "Neo4j", "RAG", "Python"],
+      links: { github: "https://github.com/kraimines/assistant_strategique_intelligent_entreprise" }
     },
     {
-      title: "Mental Health Analysis of University Students",
-      subtitle: "Statistical Analysis with R",
-      description: "Comprehensive study analyzing stress, anxiety, and depression factors among university students.",
-      highlights: [
-        "Principal Component Analysis (PCA) for dimensionality reduction",
-        "Correlation analysis and visualization",
-        "Descriptive statistics and demographic analysis",
-        "Interactive visualizations with R",
-      ],
-      tech: ["R", "FactoMineR", "ggplot2", "dplyr", "corrplot"],
-      links: {
-        github: "https://github.com/kraimines/Mental-Health-Analysis",
-        demo: "#",
-      },
+      title: "OCR & LLM Receipt Analysis",
+      description: "End-to-end document processing pipeline combining multiple OCR engines (Doctr, Tesseract, Docling) with LLM extraction (Gemini). Reduced manual entry by 80%.",
+      tech: ["Python", "Gemini API", "OCR", "LLM"],
+      links: { github: "https://github.com/kraimines/OCR-and-LLM-based-Receipt-Analysis-Application" }
     },
-  ]
+    {
+      title: "Tunisia PCA & Interactive Shiny Dashboard",
+      description: "Statistical analysis reducing 61 socio-economic variables to 14 key components (85% variance retained). Interactive dashboard adopted by 50+ researchers.",
+      tech: ["R Shiny", "ggplot2", "Statistics", "Data Viz"],
+      links: { github: "https://github.com/kraimines/tunisia-pca-shiny-dashboard" }
+    }
+  ];
 
   return (
     <motion.section
       id="projects"
-      className="py-20 px-4 bg-gradient-to-b from-black via-slate-900/20 to-black relative overflow-hidden"
-      initial="hidden"
-      whileInView="visible"
+      className="py-20 px-6"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8 }}
     >
-      <motion.div 
-        className="absolute top-1/4 left-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl -z-10"
-        animate={{
-          x: [0, -10, 0],
-          y: [0, 20, 0],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
-      <div className="max-w-4xl mx-auto relative z-10">
-        <motion.div 
-          className="mb-12"
-          variants={fadeIn('up', 0)}
+      <div className="max-w-3xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="space-y-12"
         >
-          <h2 className="text-4xl font-bold mb-4 glow-accent">
-            <span className="relative inline-block">
-              Featured Projects
-              <motion.span 
-                className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-500 to-pink-600"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
-                viewport={{ once: true }}
-              />
-            </span>
-          </h2>
-        </motion.div>
+          {/* Section Title */}
+          <div>
+            <h2 className="font-serif text-3xl font-semibold text-gray-900 mb-2">Projects</h2>
+            <div className="w-12 h-px bg-gray-300"></div>
+          </div>
 
-        <motion.div 
-          className="grid md:grid-cols-2 gap-8"
-          variants={staggerContainer}
-        >
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              className="bg-gradient-to-br from-slate-900/50 to-slate-800/20 rounded-xl p-6 border border-slate-800/50 hover:border-purple-500/30 transition-all duration-300 group relative overflow-hidden"
-              variants={fadeIn('up', index * 0.2)}
-              whileHover={{
-                y: -5,
-                boxShadow: '0 10px 25px -5px rgb(168, 85, 247, 0.2)'
-              }}
-            >
-              <motion.div 
-                className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                initial={{ opacity: 0 }}
-              />
-              <motion.div 
-                className="flex justify-between items-start mb-4 relative z-10"
+          {/* Projects List */}
+          <div className="space-y-8">
+            {projects.map((project, index) => (
+              <motion.div
+                key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                className="border border-gray-200 p-6 space-y-4"
               >
-                <div>
-                  <h3 className="text-xl font-bold text-white">{project.title}</h3>
-                  <p className="text-purple-400 text-sm">{project.subtitle}</p>
-                </div>
-                <div className="flex space-x-2">
-                  {project.links.github && (
-                    <motion.a
-                      href={project.links.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-slate-800/50 hover:bg-slate-700/50 transition-colors duration-300 text-gray-300 hover:text-white"
-                      aria-label="GitHub repository"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <Github size={16} />
-                    </motion.a>
-                  )}
-                  {project.links.demo && (
-                    <motion.a
-                      href={project.links.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-slate-800/50 hover:bg-slate-700/50 transition-colors duration-300 text-gray-300 hover:text-white"
-                      aria-label="Live demo"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <ExternalLink size={16} />
-                    </motion.a>
-                  )}
-                </div>
-              </motion.div>
-              <p className="text-muted-foreground mb-6">{project.description}</p>
-
-              <div className="mb-6">
-                <ul className="space-y-2">
-                  {project.highlights.map((highlight, i) => (
-                    <li
-                      key={i}
-                      className="flex gap-3 text-muted-foreground text-sm group-hover:text-foreground/70 transition-colors"
-                    >
-                      <span className="text-accent">→</span>
-                      <span>{highlight}</span>
-                    </li>
+                <h3 className="font-serif text-lg font-semibold text-gray-900">{project.title}</h3>
+                <p className="text-gray-700 leading-relaxed">{project.description}</p>
+                
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((tech) => (
+                    <span key={tech} className="px-2.5 py-1 text-xs border border-gray-200 text-gray-700">
+                      {tech}
+                    </span>
                   ))}
-                </ul>
-              </div>
+                </div>
 
-              <div className="flex flex-wrap gap-2 mb-6 pb-6 border-b border-accent/10">
-                {project.tech.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 bg-accent/10 text-accent text-xs rounded-full font-medium hover:bg-accent/20 transition-all duration-300"
+                {/* GitHub Link */}
+                {project.links?.github && (
+                  <a
+                    href={project.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-gray-700 hover:text-gray-900 flex items-center gap-1 transition-colors"
                   >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+                    View on GitHub
+                    <ExternalLink size={14} />
+                  </a>
+                )}
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </motion.section>
-  )
+  );
 }

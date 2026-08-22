@@ -1,110 +1,80 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { fadeIn, staggerContainer } from '@/lib/animations';
 
 export default function About() {
   return (
     <motion.section
       id="about"
-      className="py-20 px-4 bg-gradient-to-b from-black via-slate-900/30 to-black relative overflow-hidden"
-      initial="hidden"
-      whileInView="visible"
+      className="py-20 px-6"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8 }}
     >
-      <motion.div 
-        className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl -z-10"
-        animate={{
-          x: [0, 10, 0],
-          y: [0, -20, 0],
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
-      <div className="max-w-4xl mx-auto relative z-10">
-        <motion.div 
-          className="space-y-8"
-          variants={staggerContainer}
+      <div className="max-w-3xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="space-y-12"
         >
           {/* Section Title */}
-          <motion.div 
-            variants={fadeIn('up', 0)}
-            className="mb-8"
-          >
-            <h2 className="text-4xl font-bold text-cyan-400 glow-accent">About Me</h2>
-          </motion.div>
+          <div>
+            <h2 className="font-serif text-3xl font-semibold text-gray-900 mb-2">About</h2>
+            <div className="w-12 h-px bg-gray-300"></div>
+          </div>
 
           {/* Content */}
-          <motion.div 
-            className="grid md:grid-cols-2 gap-12"
-            variants={staggerContainer}
-          >
-            <motion.div 
-              className="space-y-4 text-muted-foreground leading-relaxed"
-              variants={fadeIn('right', 1)}
+          <div className="space-y-6 text-gray-700 leading-relaxed">
+            <p>
+              Data Science engineer with hands-on experience turning raw, large-scale datasets into dashboards, KPI reports, and business insights across consulting, banking, and public-sector environments. Comfortable working with senior stakeholders across departments, translating analytical findings into clear, actionable recommendations.
+            </p>
+            <p>
+              Strong command of Excel, SQL, Python, Power BI, and Tableau, combined with a solid foundation in statistics and business intelligence best practices. Currently completing my Engineering Cycle at ESSAI with a focus on Data Science and practical application of analytics in real-world business scenarios.
+            </p>
+          </div>
+
+          {/* Contact Info Cards */}
+          <div className="grid md:grid-cols-3 gap-8 pt-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1, duration: 0.6 }}
+              className="space-y-2 border-l border-gray-300 pl-6"
             >
-              <p>
-                I'm a final-year Computer Engineering student at ESSAI (Higher School of Statistics and Information
-                Analysis) specializing in Data Science and Actuarial Science. My journey in tech has been driven by a
-                passion for turning complex data into actionable insights and building intelligent solutions.
-              </p>
-              <p>
-                With expertise in machine learning, deep learning, and AI, I've worked on diverse projects ranging from
-                medical image analysis to financial modeling. I'm particularly interested in leveraging advanced
-                techniques like transformers, LLMs, and neural networks to solve real-world problems.
-              </p>
-              <p>
-                Currently seeking an end-of-studies internship to apply my expertise in a professional setting and gain
-                hands-on experience in building production-grade AI systems.
-              </p>
+              <p className="text-sm text-gray-500">Location</p>
+              <p className="text-gray-900 font-medium">Ariana, Tunis, Tunisia</p>
             </motion.div>
 
-            <motion.div 
-              className="space-y-6"
-              variants={fadeIn('left', 1)}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="space-y-2 border-l border-gray-300 pl-6"
             >
-              <motion.div 
-                className="p-4 rounded-lg bg-gradient-to-r from-slate-900/50 to-slate-800/20 backdrop-blur-sm border border-slate-800/50 hover:border-cyan-500/30 transition-all duration-300"
-                whileHover={{ 
-                  y: -5,
-                  boxShadow: '0 10px 25px -5px rgb(6, 182, 212, 0.1)'
-                }}
-                variants={fadeIn('up', 0.5)}
-              >
-                <p className="text-sm text-muted-foreground mb-1">Location</p>
-                <p className="font-semibold text-foreground">Ariana, Tunis</p>
-              </motion.div>
-              
-        
-              <motion.div 
-                className="p-4 rounded-lg bg-gradient-to-r from-slate-900/50 to-slate-800/20 backdrop-blur-sm border border-slate-800/50 hover:border-cyan-500/30 transition-all duration-300"
-                whileHover={{ 
-                  y: -5,
-                  boxShadow: '0 10px 25px -5px rgb(6, 182, 212, 0.1)'
-                }}
-                variants={fadeIn('up', 0.9)}
-              >
-                <p className="text-sm text-muted-foreground mb-1">Contact</p>
-                <p className="font-semibold text-foreground">ineskraim22@gmail.com</p>
-              </motion.div>
-              
-              <motion.div 
-                className="p-4 rounded-lg bg-gradient-to-r from-slate-900/50 to-slate-800/20 backdrop-blur-sm border border-slate-800/50 hover:border-cyan-500/30 transition-all duration-300"
-                whileHover={{ 
-                  y: -5,
-                  boxShadow: '0 10px 25px -5px rgb(6, 182, 212, 0.1)'
-                }}
-                variants={fadeIn('up', 1.1)}
-              >
-                <p className="text-sm text-muted-foreground mb-1">Phone</p>
-                <p className="font-semibold text-foreground">+216 92 930 425</p>
-              </motion.div>
+              <p className="text-sm text-gray-500">Email</p>
+              <a href="mailto:ineskraim22@gmail.com" className="text-gray-900 font-medium hover:text-gray-600 transition-colors">
+                ineskraim22@gmail.com
+              </a>
             </motion.div>
-          </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="space-y-2 border-l border-gray-300 pl-6"
+            >
+              <p className="text-sm text-gray-500">Phone</p>
+              <a href="tel:+21692930425" className="text-gray-900 font-medium hover:text-gray-600 transition-colors">
+                +216 92 930 425
+              </a>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </motion.section>

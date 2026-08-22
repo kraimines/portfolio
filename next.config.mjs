@@ -18,10 +18,11 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  
-  // Disable ESLint during build
-  eslint: {
-    ignoreDuringBuilds: true,
+
+  // Prevent concurrent static-export workers from racing on Windows.
+  experimental: {
+    staticGenerationMaxConcurrency: 1,
+    staticGenerationMinPagesPerWorker: 100,
   },
   
   // Disable React StrictMode for now to avoid potential issues

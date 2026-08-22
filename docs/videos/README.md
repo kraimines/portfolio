@@ -1,23 +1,28 @@
-# Videos Folder
+# Demo Videos
 
-Add your demo videos here:
+Put portfolio demo videos in this folder.
 
-1. **zaitouna-demo.mp4** - Demo video for Zaitouna Bank OCR & LLM project
-2. **cns-demo.mp4** - Demo video for CNS R Shiny Choropleth App
+Current filenames used by the site:
 
-## Video Requirements:
-- Format: MP4 (recommended for best browser compatibility)
-- Resolution: 1920x1080 or 1280x720 (HD recommended)
-- File size: Keep under 50MB for optimal loading
-- Length: 1-3 minutes per demo
+1. `zaitouna-demo.mp4` - Zaitouna Bank OCR & LLM project demo
+2. `cns-demo.mp4` - CNS R Shiny dashboard demo
 
-## How to Add Videos:
-1. Place your video files in this folder
-2. Name them exactly as specified in the experience data (e.g., `zaitouna-demo.mp4`)
-3. The videos will automatically appear in the experience detail modals
+## Where To Add Files
+- Copy new videos into `public/videos/`
+- Reference them in `components/experience.tsx` with `/videos/<file-name>.mp4`
+- The `public/` folder is the only place needed for static downloads and videos in Next.js
 
-## Alternative Video Hosting:
-If you prefer to host videos externally (YouTube, Vimeo, etc.), you can:
-- Upload to YouTube and get the embed link
-- Update the `videoUrl` in `components/experience.tsx` to use iframe embeds
-- Or keep videos locally for faster loading
+## CV Download
+- Put your CV file at `public/cv.pdf`
+- The hero button already points to `/cv.pdf`
+- Keeping the filename exactly `cv.pdf` makes the download link work without extra config
+
+## Recommended Format
+- MP4 format
+- 1280x720 or 1920x1080
+- Keep the file size reasonable for fast loading
+- Keep demos short and focused
+
+## Optional External Hosting
+- You can also host demos on YouTube or Vimeo
+- If you do, replace the local `demoUrl` in `components/experience.tsx` with the external link

@@ -1,121 +1,74 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { fadeIn, staggerContainer } from '@/lib/animations';
 
 export default function Skills() {
   const skillCategories = [
     {
-      title: "Machine Learning & AI",
-      skills: [
-        "Supervised & Unsupervised Learning",
-        "Deep Learning (CNN, RNN, LSTM)",
-        "Time Series Analysis",
-        "NLP & LLM",
-        "RAG",
-        "BERT & Transformers",
-        "Econometrics",
-        "Big Data",
-      ],
+      title: "BI & Analytics",
+      skills: ["Power BI", "Tableau", "Microsoft Excel", "KPI Reporting", "Dashboards", "Data Visualization"],
     },
     {
-      title: "Programming Languages",
-      skills: ["Python", "R", "SAS", "C", "Java", "SQL", "HTML/CSS/JavaScript"],
+      title: "Data & Programming",
+      skills: ["Python", "pandas", "NumPy", "scikit-learn", "SQL", "R", "PostgreSQL", "Statistical Analysis"],
     },
     {
-      title: "Data & Tools",
-      skills: [
-        "pandas",
-        "NumPy",
-        "scikit-learn",
-        "TensorFlow",
-        "Keras",
-        "PyTorch",
-        "Django",
-        "FastAPI",
-        "PostgreSQL",
-        "Power BI",
-        "Docker",
-      ],
+      title: "Tools & Technologies",
+      skills: ["Git/GitHub", "Jupyter", "VS Code", "Draw.io", "LangGraph", "Neo4j", "TensorFlow", "Streamlit"],
+    },
+    {
+      title: "Professional Skills",
+      skills: ["Stakeholder Communication", "Teamwork", "Project Planning", "Prioritization", "Business Ethics", "Data Protection", "Business Intelligence", "Data Mining"],
     },
   ]
 
   return (
     <motion.section 
       id="skills" 
-      className="py-20 px-4 bg-black relative overflow-hidden"
-      initial="hidden"
-      whileInView="visible"
+      className="py-20 px-6"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8 }}
     >
-      <motion.div 
-        className="absolute top-0 left-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl -z-10"
-        animate={{
-          x: [0, 20, 0],
-          y: [0, -10, 0],
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
-      <div className="max-w-4xl mx-auto relative z-10">
-        <motion.div 
-          variants={fadeIn('up', 0)}
-          className="mb-12"
+      <div className="max-w-3xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="space-y-12"
         >
-          <h2 className="text-4xl font-bold text-cyan-400 glow-accent">Skills & Expertise</h2>
-        </motion.div>
+          {/* Section Title */}
+          <div>
+            <h2 className="font-serif text-3xl font-semibold text-gray-900 mb-2">Skills</h2>
+            <div className="w-12 h-px bg-gray-300"></div>
+          </div>
 
-        <motion.div 
-          className="grid md:grid-cols-1 gap-8"
-          variants={staggerContainer}
-        >
-          {skillCategories.map((category, index) => (
-            <motion.div
-              key={index}
-              className="bg-gradient-to-br from-slate-900/50 to-slate-800/20 rounded-xl p-6 border border-slate-800/50 hover:border-cyan-500/30 transition-all duration-300 group relative overflow-hidden"
-              variants={fadeIn('up', index * 0.2)}
-              whileHover={{
-                y: -5,
-                boxShadow: '0 10px 25px -5px rgb(6, 182, 212, 0.1)'
-              }}
-            >
-              <motion.div 
-                className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                initial={{ opacity: 0 }}
-              />
-              <motion.h3 
-                className="text-xl font-bold text-white mb-4 relative z-10"
+          {/* Skills Grid */}
+          <div className="space-y-8">
+            {skillCategories.map((category, index) => (
+              <motion.div
+                key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
               >
-                {category.title}
-              </motion.h3>
-              <motion.div 
-                className="flex flex-wrap gap-2 relative z-10"
-                variants={staggerContainer}
-              >
-                {category.skills.map((skill, i) => (
-                  <motion.span
-                    key={i}
-                    className="px-3 py-1 bg-slate-800/50 text-cyan-300 text-sm rounded-full font-medium hover:bg-cyan-500/10 transition-colors duration-300"
-                    variants={fadeIn('up', 0.1 * i)}
-                    whileHover={{ 
-                      scale: 1.05,
-                      backgroundColor: 'rgba(6, 182, 212, 0.1)'
-                    }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {skill}
-                  </motion.span>
-                ))}
+                <h3 className="font-medium text-gray-900 mb-3 text-sm uppercase tracking-wide">{category.title}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1.5 text-sm text-gray-700 border border-gray-200 hover:border-gray-400 transition-colors"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </motion.div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </motion.div>
       </div>
     </motion.section>

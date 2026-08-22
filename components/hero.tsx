@@ -1,210 +1,98 @@
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
-import Image from "next/image"
+import { Github, Linkedin, Mail, Download } from "lucide-react"
 import { motion } from 'framer-motion'
-import { fadeIn, staggerContainer } from '@/lib/animations'
-import { AnimatedText } from './ui/animated-text'
 
 export default function Hero() {
   return (
     <motion.section 
-      initial="initial"
-      animate="animate"
-      className="min-h-screen flex items-center justify-center pt-20 pb-20 px-4 relative overflow-hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      className="pt-32 pb-20 px-6 relative"
     >
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="absolute inset-0 -z-10"
-      >
-        <motion.div 
-          animate={{
-            y: [0, -20, 0],
-            x: [0, 10, 0],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-20 left-10 w-72 h-72 bg-cyan-500/5 rounded-full blur-3xl"
-        />
-        <motion.div 
-          animate={{
-            y: [0, 20, 0],
-            x: [0, -15, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2
-          }}
-          className="absolute bottom-20 right-10 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl"
-        />
-      </motion.div>
-
-      <motion.div 
-        variants={staggerContainer}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true, amount: 0.2 }}
-        className="max-w-4xl w-full grid md:grid-cols-2 gap-8 items-center"
-      >
-        <motion.div 
-          variants={staggerContainer}
-          className="space-y-8"
-        >
-          <motion.div variants={fadeIn('right', 1)}>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-accent font-medium text-lg mb-4 glow-accent"
-            >
-              Welcome to my portfolio
-            </motion.p>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
-              <AnimatedText 
-                text="Data Science &" 
-                className="text-foreground block" 
-              />
-              <AnimatedText 
-                text="AI Engineer" 
-                className="bg-gradient-to-r from-cyan-400 via-cyan-300 to-blue-400 bg-clip-text text-transparent glow-accent" 
-              />
-            </h1>
-            <motion.p 
-              variants={fadeIn('right', 2)}
-              className="text-lg text-muted-foreground max-w-2xl leading-relaxed"
-            >
-              Final-year engineering student specializing in machine learning, deep learning, and intelligent solutions.
-              Passionate about transforming data into actionable insights and building AI-powered applications.
-            </motion.p>
-          </motion.div>
-
-          <motion.div 
-            variants={fadeIn('right', 3)}
-            className="flex flex-wrap gap-4"
+      <div className="max-w-3xl mx-auto">
+        {/* Main Content */}
+        <div className="space-y-8">
+          {/* Title */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.8 }}
           >
-            <motion.a
-              whileHover={{ 
-                y: -2,
-                boxShadow: '0 10px 25px -5px rgb(6, 182, 212, 0.5)'
-              }}
-              whileTap={{ scale: 0.98 }}
-              href="#projects"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-black rounded-lg font-medium group"
-            >
-              View My Work
-              <motion.span 
-                animate={{
-                  x: [0, 4, 0],
-                }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <ArrowRight size={18} />
-              </motion.span>
-            </motion.a>
-            <motion.a
-              whileHover={{ 
-                y: -2,
-                borderColor: 'rgba(6, 182, 212, 0.6)',
-                backgroundColor: 'rgba(6, 182, 212, 0.05)'
-              }}
-              whileTap={{ scale: 0.98 }}
-              href="#contact"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-accent/30 text-foreground rounded-lg font-medium"
-            >
-              Get In Touch
-            </motion.a>
+            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-semibold text-gray-900 mb-4 leading-tight">
+              Ines Kraim
+            </h1>
+            <p className="text-xl text-gray-700 mb-6">AI & Data Science Engineer</p>
+            <p className="text-gray-600 leading-relaxed max-w-2xl">
+              Data Science engineer with hands-on experience turning raw, large-scale datasets into dashboards, KPI reports, and business insights across consulting, banking, and public-sector environments. Comfortable working with senior stakeholders across departments, translating analytical findings into clear, actionable recommendations.
+            </p>
           </motion.div>
 
-          <motion.div 
-            variants={fadeIn('right', 4)}
+          {/* Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="flex flex-wrap gap-4 pt-4"
+          >
+            <a
+              href="#projects"
+              className="px-6 py-3 border border-gray-900 text-gray-900 text-sm font-medium transition-all hover:bg-gray-900 hover:text-white"
+            >
+              View Projects
+            </a>
+            <a
+              href="/cv.pdf"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 border border-gray-900 text-gray-900 text-sm font-medium transition-all hover:bg-gray-900 hover:text-white flex items-center gap-2"
+            >
+              <Download size={16} />
+              Download CV
+            </a>
+            <a
+              href="#contact"
+              className="px-6 py-3 border border-gray-900 text-gray-900 text-sm font-medium transition-all hover:bg-gray-900 hover:text-white"
+            >
+              Contact Me
+            </a>
+          </motion.div>
+
+          {/* Social Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
             className="flex gap-4 pt-4"
           >
-            <motion.a
-              whileHover={{ y: -3, scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+            <a
               href="https://github.com/kraimines"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-full border border-accent/20 hover:border-accent/50 hover:bg-accent/5 transition-all duration-300"
+              className="p-3 border border-gray-200 text-gray-700 hover:border-gray-900 hover:text-gray-900 transition-all"
+              aria-label="GitHub"
             >
-              <Github className="w-5 h-5" />
-            </motion.a>
-            <motion.a
-              whileHover={{ y: -3, scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              <Github size={18} />
+            </a>
+            <a
               href="https://www.linkedin.com/in/ines-kraim-514036281/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-full border border-accent/20 hover:border-accent/50 hover:bg-accent/5 transition-all duration-300"
+              className="p-3 border border-gray-200 text-gray-700 hover:border-gray-900 hover:text-gray-900 transition-all"
+              aria-label="LinkedIn"
             >
-              <Linkedin className="w-5 h-5" />
-            </motion.a>
-            <motion.a
-              whileHover={{ y: -3, scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              <Linkedin size={18} />
+            </a>
+            <a
               href="mailto:ineskraim22@gmail.com"
-              className="p-2 rounded-full border border-accent/20 hover:border-accent/50 hover:bg-accent/5 transition-all duration-300"
+              className="p-3 border border-gray-200 text-gray-700 hover:border-gray-900 hover:text-gray-900 transition-all"
+              aria-label="Email"
             >
-              <Mail className="w-5 h-5" />
-            </motion.a>
+              <Mail size={18} />
+            </a>
           </motion.div>
-        </motion.div>
-        <motion.div className="relative w-full h-full flex items-center justify-center">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ 
-              opacity: 1, 
-              scale: 1,
-              transition: {
-                delay: 0.5,
-                duration: 0.8,
-                type: 'spring',
-                stiffness: 100,
-                damping: 10
-              }
-            }}
-            whileHover={{ 
-              y: -10,
-              boxShadow: '0 20px 25px -5px rgb(0, 0, 0, 0.1), 0 10px 10px -5px rgb(0, 0, 0, 0.04)'
-            }}
-            className="relative w-full h-80 md:h-96 lg:h-[500px] rounded-2xl overflow-hidden border border-accent/10"
-          >
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ 
-                opacity: 1,
-                transition: { delay: 1, duration: 1 }
-              }}
-              className="absolute inset-0"
-            >
-              <Image
-                src={`${process.env.NODE_ENV === 'production' ? '/portfolio' : ''}/aa.png`}
-                alt="Profile Picture"
-                fill
-                className="object-cover"
-                priority
-              />
-            </motion.div>
-            <motion.div 
-              className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
-              initial={{ opacity: 0 }}
-              animate={{ 
-                opacity: 1,
-                transition: { delay: 1.2, duration: 0.8 }
-              }}
-            />
-          </motion.div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </motion.section>
   )
 }
