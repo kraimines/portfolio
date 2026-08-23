@@ -23,7 +23,7 @@ export default function Hero() {
             </h1>
             <p className="text-xl text-gray-700 mb-6">AI & Data Science Engineer</p>
             <p className="text-gray-600 leading-relaxed max-w-2xl">
-              Data Science engineer with hands-on experience turning raw, large-scale datasets into dashboards, KPI reports, and business insights across consulting, banking, and public-sector environments. Comfortable working with senior stakeholders across departments, translating analytical findings into clear, actionable recommendations.
+              AI & Data Science Engineer passionate about turning data and emerging AI technologies into practical solutions. I build intelligent systems combining Machine Learning, LLMs, RAG, and knowledge graphs to solve real-world business challenges.
             </p>
           </motion.div>
 
@@ -41,10 +41,8 @@ export default function Hero() {
               View Projects
             </a>
             <a
-              href="/cv.pdf"
+              href="cv.pdf"
               download
-              target="_blank"
-              rel="noopener noreferrer"
               className="px-6 py-3 border border-gray-900 text-gray-900 text-sm font-medium transition-all hover:bg-gray-900 hover:text-white flex items-center gap-2"
             >
               <Download size={16} />

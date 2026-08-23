@@ -29,11 +29,12 @@ export default function About() {
           {/* Content */}
           <div className="space-y-6 text-gray-700 leading-relaxed">
             <p>
-              Data Science engineer with hands-on experience turning raw, large-scale datasets into dashboards, KPI reports, and business insights across consulting, banking, and public-sector environments. Comfortable working with senior stakeholders across departments, translating analytical findings into clear, actionable recommendations.
+              AI & Data Science Engineer passionate about turning data and emerging AI technologies into practical solutions. I build intelligent systems combining Machine Learning, LLMs, RAG, and knowledge graphs to solve real-world business challenges.
             </p>
             <p>
-              Strong command of Excel, SQL, Python, Power BI, and Tableau, combined with a solid foundation in statistics and business intelligence best practices. Currently completing my Engineering Cycle at ESSAI with a focus on Data Science and practical application of analytics in real-world business scenarios.
-            </p>
+              My experience spans Deep Learning, Computer Vision, Generative AI, NLP, and data analytics, using technologies such as Python, TensorFlow, PyTorch, Scikit-learn, and OpenCV.
+              I specialize in modern AI architectures, including LLMs, RAG, LangChain, LangGraph, multi-agent systems, knowledge graphs with Neo4j, and Graph Neural Networks (GNNs). I enjoy turning complex data and business challenges into scalable, practical AI solutions—from data processing and model development to API integration and intelligent applications.   
+           </p>
           </div>
 
           {/* Contact Info Cards */}
