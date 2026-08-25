@@ -9,13 +9,13 @@ export default function Projects() {
       title: "Medical Image Analysis",
       description: "Binary classification model for early melanoma detection using dual-input deep learning (EfficientNetV2 + patient metadata). 1st Place in Bootcamp Competition.",
       tech: ["TensorFlow", "Python", "Deep Learning", "Medical Imaging"],
-      links: { github: "https://github.com/kraimines/Medical-Image-Classification-EfficientNetV2" }
+      links: { github: "https://github.com/kraimines/Medical-Image-Analysis" }
     },
     {
       title: "Automated Trading with Reinforcement Learning",
       description: "RL agent (PPO policy gradient) trained on 5+ years of historical stock data. Achieved +18.73% annual return over buy-and-hold strategy with optimized risk management.",
       tech: ["Stable-Baselines3", "Python", "Finance", "RL"],
-      links: { github: "https://github.com/kraimines/Automated-Trading-Reinforce-Learning" }
+      links: { github: "https://github.com/kraimines/Reinforcement-Learning-for-Trading" }
     },
     {
       title: "Enterprise AI Assistant",
