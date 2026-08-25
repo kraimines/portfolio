@@ -88,6 +88,18 @@ export default function Contact() {
               transition={{ delay: 0.1, duration: 0.6 }}
               className="space-y-6"
             >
+              <div className="flex items-center gap-4 border-b border-gray-200 pb-6">
+                <img
+                  src="image%20proo.jpg"
+                  alt="Ines Kraim"
+                  className="h-20 w-20 shrink-0 rounded-full border border-gray-200 object-cover object-top shadow-sm"
+                />
+                <div>
+                  <p className="font-serif text-xl font-semibold text-gray-900">Ines Kraim</p>
+                  <p className="mt-1 text-sm text-gray-600">AI &amp; Data Science Engineer</p>
+                </div>
+              </div>
+
               <p className="text-gray-700 leading-relaxed">
                 I'm always interested in hearing about new projects and opportunities. Feel free to reach out via email or connect with me on social platforms.
               </p>
