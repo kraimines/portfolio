@@ -31,7 +31,7 @@ export default function Experience() {
         'Role-Aware AI',
       ],
       github: 'https://github.com/kraimines/assistant_strategique_intelligent_entreprise',
-      demoUrl: '/videos/talan-demo.mp4',
+      demoUrl: 'videos/talan-demo.mp4',
     },
     {
       company: 'Zaitouna Bank',
@@ -43,7 +43,7 @@ export default function Experience() {
       achievements: ['80% reduction in manual data entry', '95% OCR accuracy', '10,000+ receipts processed', '2 weeks ahead of schedule'],
       technologies: ['Python', 'Django', 'Doctr', 'Tesseract', 'Docling', 'Gemini API', 'PostgreSQL'],
       github: 'https://github.com/kraimines/OCR-and-LLM-based-Receipt-Analysis-Application',
-      demoUrl: '/videos/zaitouna-demo.mp4',
+      demoUrl: 'videos/zaitouna-demo.mp4',
     },
     {
       company: 'National Council of Statistics (CNS)',
@@ -55,7 +55,7 @@ export default function Experience() {
       achievements: ['50+ researchers using the tool', '3 key regional patterns identified', 'Adopted as official CNS tool'],
       technologies: ['R', 'R Shiny', 'ggplot2', 'leaflet', 'dplyr', 'tidyr', 'Statistics'],
       github: 'https://github.com/kraimines/tunisia-pca-shiny-dashboard',
-      demoUrl: '/videos/cns-demo.mp4',
+      demoUrl: 'videos/cns-demo.mp4',
     },
   ];
 
